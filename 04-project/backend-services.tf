@@ -18,12 +18,12 @@ resource "aws_db_instance" "vapp-rds" {
   allocated_storage      = 20
   storage_type           = "gp2"
   engine                 = "mysql"
-  engine_version         = "5.6.34"
+  engine_version         = "8.0.39"
   instance_class         = "db.t2.micro"
   db_name                = var.dbname
   username               = var.dbuser
   password               = var.dbpass
-  parameter_group_name   = "default.mysql5.6"
+  parameter_group_name   = "default.mysql8"
   multi_az               = false
   publicly_accessible    = false
   skip_final_snapshot    = true
@@ -36,7 +36,7 @@ resource "aws_elasticache_cluster" "vapp-cache" {
   engine               = "memcached"
   node_type            = "cache.t2.micro"
   num_cache_nodes      = 1
-  parameter_group_name = "default.memcached1.5"
+  parameter_group_name = "default.memcached1.6"
   port                 = 11211
   security_group_ids   = [aws_security_group.vapp-backend-sg.id]
   subnet_group_name    = aws_elasticache_subnet_group.vapp-ecache-subgrp.name
@@ -45,7 +45,7 @@ resource "aws_elasticache_cluster" "vapp-cache" {
 resource "aws_mq_broker" "vapp-rmq" {
   broker_name        = "vapp-rmq"
   engine_type        = "ActiveMQ"
-  engine_version     = "5.15.0"
+  engine_version     = "5.16.7"
   host_instance_type = "mq.t2.micro"
   security_groups    = [aws_security_group.vapp-backend-sg.id]
   subnet_ids         = [module.vpc.private_subnets[0]]
