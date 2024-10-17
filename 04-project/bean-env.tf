@@ -135,5 +135,5 @@ resource "aws_elastic_beanstalk_environment" "vapp-env" {
     value     = aws_security_group.vapp-bean-elb-sg.id
   }
 
-  depends_on = [aws_security_group.vapp-bean-elb-sg, aws_security_group.vapp-test-sg]
+  depends_on = [aws_security_group.vapp-bean-elb-sg, aws_security_group.vapp-test-sg, aws_elastic_beanstalk_application.vapp]
 }

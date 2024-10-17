@@ -76,6 +76,13 @@ resource "aws_security_group" "vapp-backend-sg" {
     to_port         = 22
     security_groups = [aws_security_group.vapp-test-sg.id]
   }
+
+  ingress {
+    from_port       = 3360
+    protocol        = "tcp"
+    to_port         = 3360
+    security_groups = [aws_security_group.vapp-bation-sg.id]
+  }
 }
 
 resource "aws_security_group_rule" "sec_group_allow_itself" {
