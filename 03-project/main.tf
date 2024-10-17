@@ -19,7 +19,7 @@ locals {
     },
     frontend_react = {
       name           = "frontend-react"
-      image          = "000000000000.dkr.ecr.us-east-1.amazonaws.com/frontendreactimg"
+      image          = "0000000000000.dkr.ecr.us-east-1.amazonaws.com/frontendreactimg"
       container_port = 80
       task_family    = "MERN-Frontend-Family"
       service_name   = "frontend-react-svc"
@@ -91,7 +91,6 @@ resource "aws_ecs_task_definition" "task_definitions" {
       ]
     }
   ])
-
   tags = each.value.tags
 }
 

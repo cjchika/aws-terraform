@@ -1,2 +1,2 @@
 ## Deployed a MERN Stack App
-###  Using Docker, ECS, Security Groups, Target Groups, ALB
+###  Using Docker, ECS, Fargate, Security Groups, Target Groups, ALB
