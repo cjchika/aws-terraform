@@ -1,2 +1,2 @@
 ## Terraform Cloud State
-###  Using Jenkins CICD Pipeline, Docker, ECS, ECR, Fargate, Security Groups, Target Groups, ALB
+###  Deploying a Java Tomcat App using EC2, S3, RDS, ElasticCache, Amazon MQ, Elastic Beanstalk etc in a custom VPC.

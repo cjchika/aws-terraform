@@ -34,3 +34,8 @@ resource "aws_iam_role_policy_attachment" "rds_full_access" {
   policy_arn = "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
   role       = aws_iam_role.elasticbeanstalk_ec2_role.name
 }
+
+resource "aws_iam_instance_profile" "elasticbeanstalk_ec2_instance_profile" {
+  name = "elasticbeanstalk_ec2_instance_profile"
+  role = aws_iam_role.elasticbeanstalk_ec2_role.name
+}
