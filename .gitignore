@@ -2,5 +2,6 @@ misc
 04-project/.terraform 
 04-project/.terraform.lock.hcl
 04-project/var.tf
+04-project/templates
 vappkey
 vappkey.pub

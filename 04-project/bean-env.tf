@@ -12,7 +12,7 @@ resource "aws_elastic_beanstalk_environment" "vapp-env" {
   setting {
     name      = "IamInstanceProfile"
     namespace = "aws:autoscaling:launchconfiguration"
-    value     = "aws-elasticbeanstalk-ec2-role"
+    value     = aws_iam_role.elasticbeanstalk_ec2_role.name
   }
 
   setting {
