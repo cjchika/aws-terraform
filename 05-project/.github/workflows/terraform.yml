@@ -5,12 +5,13 @@ on:
       - main
       - stage
     paths:
-      - terraform/**
+      - 05-project/terraform/**
   pull_request:
     branches:
       - main
     paths:
-      - terraform/**
+      - 05-project/terraform/**
+  workflow_dispatch:
 
 env:
 	# Creds for AWS Deployment
