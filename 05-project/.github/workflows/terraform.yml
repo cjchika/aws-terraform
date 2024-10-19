@@ -11,7 +11,6 @@ on:
       - 'main'
     paths:
       - '05-project/terraform/**'
-  workflow_dispatch:
 env:
 	# Creds for AWS Deployment
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
