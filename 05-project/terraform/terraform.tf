@@ -31,6 +31,5 @@ terraform {
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
-
   required_version = "~> 1.6"
 }
