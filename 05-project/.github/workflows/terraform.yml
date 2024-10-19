@@ -1,16 +1,16 @@
-name: "Vapp IAC - New"
+name: "Vapp IAC"
 on: 
   push:
     branches:
-      - main
-      - stage
+      - 'main'
+      - 'stage'
     paths:
-      - 05-project/terraform/**
+      - '05-project/terraform/**.tf'
   pull_request:
     branches:
-      - main
+      - 'main'
     paths:
-      - 05-project/terraform/**
+      - '05-project/terraform/**'
 env:
 	# Creds for AWS Deployment
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
