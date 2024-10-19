@@ -1,18 +1,17 @@
 name: "Vapp IAC"
-on: 
+on:
   push:
     branches:
-      - 'main'
-      - 'stage'
+      - "main"
+      - "stage"
     paths:
-      - '05-project/terraform/**'
+      - "05-project/terraform/**"
   pull_request:
     branches:
-      - 'main'
+      - "main"
     paths:
-      - '05-project/terraform/**'
+      - "05-project/terraform/**"
 env:
-	# Creds for AWS Deployment
   AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
   BUCKET_TF_STATE: ${{ secrets.BUCKET_TF_STATE }}
@@ -24,7 +23,7 @@ jobs:
     name: "Apply terraform code changes"
     runs-on: "ubuntu-latest"
     defaults:
-      run: 
+      run:
         shell: bash
         working-directory: ./terraform
 
@@ -48,11 +47,10 @@ jobs:
         run: terraform validate
 
       - name: Terraform plan
-        id: plan 
+        id: plan
         run: terraform plan -no-color -input=false -out planfile
-        continue-on-error: true 
-		
+        continue-on-error: true
+
       - name: Terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-
